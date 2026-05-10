@@ -1,0 +1,21 @@
+{
+  "name": "nodejs-system-design-lab",
+  "version": "1.0.0",
+  "description": "Comprehensive Node.js system design lab",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "demo": "node src/demo.js",
+    "test": "LOG_LEVEL=ERROR node --test"
+  },
+  "keywords": [
+    "system-design",
+    "nodejs",
+    "distributed-systems"
+  ],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=18"
+  }
+}
