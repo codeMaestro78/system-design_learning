@@ -13,11 +13,59 @@ Dedicated circuit per pair of hosts — like old telephone systems. Expensive, f
 
 ### Optimized evolution: Packet switching + layered protocols
 ```text
-Layer 7: Application   (HTTP, gRPC, DNS, SMTP)     "What are we saying?"
-Layer 4: Transport     (TCP, UDP, QUIC)             "How reliably do we send it?"
-Layer 3: Network       (IP, ICMP, BGP)              "How do we route it?"
-Layer 2: Data Link     (Ethernet, WiFi)             "How do we send on local segment?"
-Layer 1: Physical      (cables, radio, fiber)       "What's the medium?"
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ Layer 9 : Business / Product                                                 │
+│ Technologies : Pricing, SLAs, Compliance, Analytics, Revenue Models          │
+│ Question     : "Why are we building it?"                                     │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ Layer 8 : User Experience                                                    │
+│ Technologies : Web UI, Mobile Apps, Browser, CLI, SDKs                      │
+│ Question     : "How does the user interact with it?"                         │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ Layer 7 : Application                                                        │
+│ Technologies : HTTP, HTTPS, gRPC, GraphQL, DNS, SMTP, WebSocket             │
+│ Question     : "What are we saying?"                                         │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ Layer 6 : Session / Authentication                                           │
+│ Technologies : JWT, OAuth 2.0, OpenID Connect, Cookies, Sessions, API Keys  │
+│ Question     : "Who are we talking to?"                                      │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ Layer 5 : Presentation / Data                                                │
+│ Technologies : JSON, XML, Protobuf, Avro, Compression, Encryption           │
+│ Question     : "How is the data represented?"                                │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ Layer 4 : Transport                                                          │
+│ Technologies : TCP, UDP, QUIC                                                │
+│ Question     : "How reliably do we send it?"                                 │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ Layer 3 : Network                                                            │
+│ Technologies : IP, ICMP, BGP, OSPF, Routing                                 │
+│ Question     : "How do we route it?"                                         │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ Layer 2 : Data Link                                                          │
+│ Technologies : Ethernet, WiFi, ARP, VLAN, MAC Addressing                    │
+│ Question     : "How do we send on the local segment?"                        │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ Layer 1 : Physical                                                           │
+│ Technologies : Copper, Fiber, Radio, Satellite, Electrical Signals          │
+│ Question     : "What's the medium?"                                          │
+└──────────────────────────────────────────────────────────────────────────────┘
 ```
 
 Each layer adds its header and passes down. At destination, each layer strips its header and passes up. This layering is what allows WiFi, Ethernet, and 5G to all carry the same HTTP traffic.
